@@ -1,7 +1,6 @@
 #include <iostream>
 
-struct Cls
-{
+struct Cls {
     Cls(char c, double d, int i) : c{c}, d{d}, i{i} {};
 
     void address_of_c()
@@ -32,7 +31,6 @@ char &get_c(Cls &cls)
     return *c;
 }
 
-static double d = 13;
 double &get_d(Cls &cls)
 {
     double *d = (double *)(&cls) + 1;
@@ -51,13 +49,17 @@ int main()
     c.address_of_c();
     c.address_of_i();
     c.address_of_d();
+
     Cls &link = c;
+
     double &dd = get_d(link);
     dd = 14;
     c.address_of_d();
+
     int &ii = get_i(link);
     ii = 666;
     c.address_of_i();
+
     char &cc = get_c(link);
     cc = 'z';
     c.address_of_c();
