@@ -67,5 +67,4 @@ int main()
     String s2{"Hello"};
 
     s.append(s2);
-    std::cout << "Lalalalalaa" << std::endl;
 }
